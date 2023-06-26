@@ -1,0 +1,101 @@
+#title {
+  font-family: monospace;
+  font-size: 25px;
+}
+
+body {
+  color: #d5c4a1;
+  background-color: #383b3c;
+}
+
+.container {
+  background-color: #383b3c;
+  display: flex;
+  gap: 10px;
+}
+
+.tablediv {
+  border: 1px solid #a89984;
+  border-radius: 6px;
+  padding: 10px;
+  overflow: auto;
+}
+
+.form {
+  border-radius: 6px;
+  border: 1px solid #a89984;
+  padding: 10px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input {
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: #3c3836;
+  color: #d5c4a1;
+}
+
+button {
+  padding: 8px;
+  color: #d5c4a1;
+  border-radius: 8px;
+  margin: 1px;
+  border: 1px solid ;
+  cursor: pointer;
+}
+
+button:hover{
+  color: #ffeac3;
+}
+
+.update-btn:hover {
+  background-color: #b7b92e;
+  border: 1px solid #a89984;
+}
+
+.delete-btn:hover {
+  border: 1px solid #a89984;
+  background-color: #fb4934;
+}
+
+.delete-btn {
+  background-color: #cc332e;
+}
+
+.update-btn {
+  background-color: #98971a;
+}
+
+.submit {
+  padding: 10px;
+  color: #ebdbb2;
+  border-radius: 4px;
+  border-color:1px solid #a89984;
+  cursor: pointer;
+  background-color: #689d6a;
+}
+
+.submit:hover {
+  color: #fffaef;
+  background-color: #78b462;
+}
+
+
+table {
+  border-collapse: separate;
+  border-spacing: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .tablediv {
+    margin-bottom: 10px;
+  }
+}

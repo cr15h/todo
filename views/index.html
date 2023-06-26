@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="../public/client.js"></script>
+    <link rel="stylesheet" href="../public/style.css">
+    <title>todo</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <h3 id="title">todo app</h3>
+            <h2>create new task</h2>
+            <form method="post" action="/post" id="myform">
+                <label for="taskTitle">Title</label><br>
+                <input id="taskTitle" type="text" name="taskTitle" for="taskTitle">
+                <br>
+                <label for="taskDescription">Description</label><br>
+                <input id="taskDescription" type="text" name="taskDescription" for="taskDescription">
+                <br>
+                <input class="submit" type="submit" value="Create">
+            </form>
+        </div>
+        <div class="tablediv">
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="taskTable"></tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
