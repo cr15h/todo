@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <div class="form">
-            <h3 id="title">todo app</h3>
+            <h1 id="title">todo app</h1>
             <h2>create new task</h2>
             <form method="post" action="/post" id="myform">
                 <label for="taskTitle">Title</label><br>
@@ -25,22 +25,8 @@
                 <input class="submit" type="submit" value="Create">
             </form>
         </div>
-        <div class="tablediv">
-            
-            <table>
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody id="taskTable"></tbody>
-            </table>
-        </div>
-
+        <div class="tasks"></div>
     </div>
-
 </body>
 
 </html>

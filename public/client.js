@@ -10,7 +10,7 @@ form.addEventListener('submit', (e) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
-    }).then((res) => {``
+    }).then((res) => {
         if (res.status === 201) {
             window.location.reload();
         }
@@ -28,25 +28,23 @@ fetch('/api/tasks/', { method: 'GET' })
             element.focus();
         }
 
-        const tableBody = document.querySelector('#taskTable');
+        const tasks = document.querySelector('.tasks');
         data.reverse().forEach(task => {
-            const row = document.createElement('tr');
+            const taskItem = document.createElement('div');
             if (task.taskDescription == null) {
                 task.taskDescription = "";
             }
-            row.innerHTML = `
-            <td>${task.taskTitle}</td>
-            
-            <td>${task.taskDescription}</td>
-            <td>
+            taskItem.classList.add('task');
+            taskItem.innerHTML = `
+                <h3 class="taskTitle">${task.taskTitle}</h3>
+                <p class="taskDescription">${task.taskDescription}</p>
                 <button class="update-btn" id="${task.id}">Update</button>
                 <button class="delete-btn" id="${task.id}">Delete</button>
-            </td>
-        `;
-            tableBody.appendChild(row);
+            `;
+            tasks.appendChild(taskItem);
 
-            const deleteBtn = row.querySelector('.delete-btn');
-            const updateBtn = row.querySelector('.update-btn');
+            const deleteBtn = taskItem.querySelector('.delete-btn');
+            const updateBtn = taskItem.querySelector('.update-btn');
             deleteBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 const deleteId = deleteBtn.id;
@@ -64,8 +62,8 @@ fetch('/api/tasks/', { method: 'GET' })
             updateBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 const updateId = updateBtn.id;
-                const title = row.querySelector('td:nth-child(1)');
-                const description = row.querySelector('td:nth-child(2)');
+                const title = taskItem.querySelector('.taskTitle');
+                const description = taskItem.querySelector('.taskDescription');
                 // console.log("desc:",description.innerText==="");
                 // console.log("hi");
                 if (title.isContentEditable) {
